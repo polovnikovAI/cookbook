@@ -32,6 +32,7 @@ module.exports = {
     },
     plugins: ['@typescript-eslint', 'react'],
     rules: {
+        'react/jsx-key': '0',
         'react/react-in-jsx-scope': 'off',
         'no-var': 'error',
         'prettier/prettier': [
