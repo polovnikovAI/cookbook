@@ -6,6 +6,15 @@ import { BuildOptions } from './types/types';
 export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     const isDev = options.mode === 'development';
 
+    const assetLoader = {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+            {
+            loader: 'file-loader',
+            },
+        ],
+    }
+
     const cssLoaderWithModules = {
         loader: 'css-loader',
         options: {
@@ -44,5 +53,5 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         exclude: /node_modules/,
     };
 
-    return [scssLoader, tsLoader];
+    return [assetLoader, scssLoader, tsLoader];
 }

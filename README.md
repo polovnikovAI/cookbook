@@ -1,1 +1,1 @@
-**This is my projects settings**
+**This is project Cook Book to remember recipes**

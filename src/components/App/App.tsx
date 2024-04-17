@@ -6,15 +6,22 @@ interface AppProps {}
 
 const App: FC<AppProps> = () => {
     return (
-        <div>
-            <h1 className={classes.smth_class}>hello world</h1>
+        <div className={classes.App}>
             <CookCard
-                foodId={Date.now()}
-                cookBy='сковорода'
+                foodId={1}
+                cookBy='knife'
+                nameFood='салат'
+                difficulty={1}
+                timeCook={5}
+                ingredients={['Салат айсберг', 'Помидоры', 'Огурцы', 'Соль', 'Перец', 'Майонез']}
+            />
+            <CookCard
+                foodId={2}
+                cookBy='pan'
                 nameFood='яичница'
                 difficulty={2}
-                timeCook={10}
-                ingredients={['яйца', 'соль', 'перец']}
+                timeCook={5}
+                ingredients={['Яйца', 'Соль', 'Перец']}
             />
         </div>
     );
