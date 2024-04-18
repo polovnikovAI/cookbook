@@ -6,10 +6,12 @@
     flex-direction: column
     font-size: 22px
     min-width: 250px
-    width: 25%
+    max-width: 350px
+    max-height: 400px
     padding: 20px
     border: 3px solid #9a9a9a
     border-radius: 8px
+    margin: 30px
     .cookBy
         margin: 0 auto
         .cookByImage
@@ -21,10 +23,21 @@
         font-size: 26px
         margin: 0 auto
     .difficulty
-        color: yellow
+        color: #fff
         &::after
             content: '☆'
+            font-size: 26px
+            color: yellow
     .timeCook
-        color: #aa0fd1
+        margin-bottom: 7px
+    .price
+        margin-bottom: 10px
     .ingredients
-        background-color: #0e1718
+        font-weight: 500
+        overflow: auto
+        scroll-behavior: smooth
+        background: linear-gradient(157deg, rgba(61,242,191,1) 0%, rgba(28,190,237,1) 25%, rgba(16,144,240,1) 50%, rgba(17,58,189,1) 90%, rgba(85,3,217,1) 100%)
+        border-radius: 8px
+        padding-bottom: 10px
+        .ingredientsTitle
+            padding: 5px 10px

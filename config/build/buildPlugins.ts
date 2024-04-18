@@ -9,7 +9,9 @@ export function buildPlugins({ mode, paths }: BuildOptions): Configuration['plug
     const isDev = mode === 'development';
     const isProd = mode === 'production';
 
-    const plugins: Configuration['plugins'] = [new HtmlWebpackPlugin({ template: paths.html })];
+    const plugins: Configuration['plugins'] = [new HtmlWebpackPlugin({ 
+        template: paths.html,
+    })];
 
     if (isDev) {
         plugins.push(new webpack.ProgressPlugin());
