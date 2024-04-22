@@ -7,18 +7,13 @@ import byMicrowave from '@/assets/cookCardImages/byMicrowave.png';
 import byOven from '@/assets/cookCardImages/byOven.png';
 import nothing from '@/assets/cookCardImages/nothing.png';
 import question from '@/assets/cookCardImages/question.png';
+import { ICookCardProps } from '../types/types';
 
 interface CookCardProps {
-    foodId?: number;
-    cookBy: string;
-    nameFood: string;
-    difficulty: number;
-    timeCook: number;
-    price?: number;
-    ingredients: string[];
+    foodOptions: ICookCardProps;
 }
 
-const CookCard: FC<CookCardProps> = (foodOptions: CookCardProps) => {
+const CookCard: FC<CookCardProps> = ({ foodOptions }) => {
     let cookByImage: string;
     switch (foodOptions.cookBy) {
         case 'knife':
