@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import * as s from './CookCard.module.sass';
 import byKnife from '@/assets/cookCardImages/byKnife.png';
 import byPan from '@/assets/cookCardImages/byPan.png';
@@ -7,7 +7,7 @@ import byMicrowave from '@/assets/cookCardImages/byMicrowave.png';
 import byOven from '@/assets/cookCardImages/byOven.png';
 import nothing from '@/assets/cookCardImages/nothing.png';
 import question from '@/assets/cookCardImages/question.png';
-import { ICookCardProps } from '../types/types';
+import { ICookCardProps } from '@/components/types/types';
 
 interface CookCardProps {
     foodOptions: ICookCardProps;
@@ -15,6 +15,7 @@ interface CookCardProps {
 
 const CookCard: FC<CookCardProps> = ({ foodOptions }) => {
     let cookByImage: string;
+
     switch (foodOptions.cookBy) {
         case 'knife':
             cookByImage = byKnife;
@@ -38,6 +39,7 @@ const CookCard: FC<CookCardProps> = ({ foodOptions }) => {
             cookByImage = question;
             break;
     }
+
     return (
         <div className={s.cardWrapper}>
             <div className={s.cookBy}>
