@@ -1,32 +1,39 @@
 // КОМПОНЕНТ СОЗДАНИЯ НОВОЙ ПОЛЬЗОВАТЕЛЬСКОЙ КАРТОЧКИ ИЗ ИНПУТОВ
 
 import { ChangeEvent, FC, useState } from 'react';
-import { ICard, ICookCardProps } from './types/types';
-import CookCard from './CookCard/CookCard';
+import { ICard } from '../types/types';
+import CookCard from '../CookCard/CookCard';
+import * as s from './CreateCard.module.sass';
 
-const CreateCard: FC = () => {
+type CreateCardProps = {
+    all_cards: ICard[];
+};
+
+const CreateCard: FC<CreateCardProps> = ({ all_cards }) => {
     const [cookBy, setCookBy] = useState<string>('');
     const [nameFood, setNameFood] = useState<string>('');
-    const [difficulty, setDifficulty] = useState<number>(0);
-    const [timeCook, setTimeCook] = useState<number>(0);
-    const [price, setPrice] = useState<number>(0);
+    const [difficulty, setDifficulty] = useState<number>();
+    const [timeCook, setTimeCook] = useState<number>();
+    const [price, setPrice] = useState<number>();
     const [ingredients, setIngredients] = useState<string[]>([]);
-    const [cards, setCards] = useState<ICard[]>([]);
+    const [cards, setCards] = useState<ICard[]>([...all_cards]);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        const eventName = event.target.name;
-        if (eventName === 'cookby') {
-            setCookBy(event.target.value);
-        } else if (eventName === 'namefood') {
-            setNameFood(event.target.value);
-        } else if (eventName === 'difficulty') {
-            setDifficulty(+event.target.value);
-        } else if (eventName === 'timecook') {
-            setTimeCook(+event.target.value);
-        } else if (eventName === 'price') {
-            setPrice(+event.target.value);
-        } else if (eventName === 'ingredients') {
-            setIngredients(event.target.value.split(','));
+        const inputName = event.target.name;
+        const value = event.target.value;
+
+        if (inputName === 'cookby') {
+            setCookBy(value);
+        } else if (inputName === 'namefood') {
+            setNameFood(value);
+        } else if (inputName === 'difficulty') {
+            setDifficulty(+value);
+        } else if (inputName === 'timecook') {
+            setTimeCook(+value);
+        } else if (inputName === 'price') {
+            setPrice(+value);
+        } else if (inputName === 'ingredients') {
+            setIngredients(value.split(','));
         }
     };
 
@@ -39,7 +46,9 @@ const CreateCard: FC = () => {
             price: price,
             ingredients: ingredients,
         };
+
         setCards([...cards, newCard]);
+
         setCookBy('');
         setNameFood('');
         setDifficulty(0);
@@ -94,7 +103,7 @@ const CreateCard: FC = () => {
                 onChange={handleChange}
             />
             <button onClick={addCard}>create card</button>
-            <div>
+            <div className={s.cards}>
                 {cards.map((card: ICard, key: number) => {
                     return (
                         <CookCard
