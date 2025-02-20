@@ -1,0 +1,76 @@
+{
+    "cards": [
+        {
+            "id": "1",
+            "cookBy": "http://localhost:8000/knife.png",
+            "nameFood": "салат",
+            "difficulty": 1,
+            "timeCook": 10,
+            "price": 200,
+            "ingredients": ["Салат айсберг", "Помидоры", "Огурцы", "Соль", "Перец", "Майонез"]
+        },
+        {
+            "id": "2",
+            "cookBy": "http://localhost:8000/question.png",
+            "nameFood": "яичница с тестом",
+            "difficulty": 1,
+            "timeCook": 10,
+            "price": 18,
+            "ingredients": ["Яйца", "Мука", "Вода", "Соль"]
+        },
+        {
+            "id": "3",
+            "cookBy": "http://localhost:8000/pan.png",
+            "nameFood": "яичница",
+            "difficulty": 1,
+            "timeCook": 5,
+            "price": 20,
+            "ingredients": ["Яйца", "Соль", "Перец"]
+        },
+        {
+            "id": "4",
+            "cookBy": "http://localhost:8000/pot.png",
+            "nameFood": "макароны",
+            "difficulty": 2,
+            "timeCook": 15,
+            "price": 80,
+            "ingredients": ["Макароны", "Соль"]
+        },
+        {
+            "id": "5",
+            "cookBy": "http://localhost:8000/oven.png",
+            "nameFood": "запеченая курица",
+            "difficulty": 3,
+            "timeCook": 60,
+            "price": 350,
+            "ingredients": ["Курица", "Соль", "Перец", "Паприка", "Сухой чеснок"]
+        },
+        {
+            "id": "6",
+            "cookBy": "http://localhost:8000/microwave.png",
+            "nameFood": "чебупели",
+            "difficulty": 0,
+            "timeCook": 3,
+            "price": 180,
+            "ingredients": ["Чебупели"]
+        },
+        {
+            "id": "7",
+            "cookBy": "http://localhost:8000/pot.png",
+            "nameFood": "куриный суп",
+            "difficulty": 3,
+            "timeCook": 90,
+            "price": 450,
+            "ingredients": ["Макароны", "Курица", "Картофель", "Морковь", "Лук", "Соль"]
+        },
+        {
+            "id": "8",
+            "cookBy": "http://localhost:8000/nothing.png",
+            "nameFood": "копченая курица",
+            "difficulty": 0,
+            "timeCook": 0,
+            "price": 220,
+            "ingredients": ["Копченая курица"]
+        }
+    ]
+}

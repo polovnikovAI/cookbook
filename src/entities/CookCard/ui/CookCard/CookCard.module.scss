@@ -1,0 +1,70 @@
+// .cardWrapper {
+//     background: rgb(61, 242, 191);
+//     background: linear-gradient(135deg, rgb(61, 242, 191), rgb(17, 58, 189));
+//     color: #fff;
+//     display: flex;
+//     flex-direction: column;
+//     font-size: 22px;
+//     min-width: 250px;
+//     max-width: 350px;
+//     max-height: 400px;
+//     padding: 20px;
+//     border: 3px solid #9a9a9a;
+//     border-radius: 8px;
+//     margin: 30px;
+// }
+
+.CookCard {
+    flex-wrap: wrap;
+}
+
+.cardWrapper {
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.9s ease-in-out;
+    max-width: 350px;
+    height: 600px;
+    margin: 30px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.cookBy {
+    margin: 0 auto;
+}
+
+.cookByImage {
+    width: 100px;
+    height: 100px;
+}
+
+.nameFood {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 26px;
+    margin: 0 auto;
+}
+
+.difficulty {
+    &::after {
+        content: "☆";
+        font-size: 26px;
+        color: yellow;
+    }
+}
+
+.ingredients {
+    font-weight: 500;
+    overflow: auto;
+    scroll-behavior: smooth;
+    background: linear-gradient(135deg, var(--bg-color), var(--secondary-color));
+    border-radius: 8px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.ingredientsTitle {
+    text-align: center;
+}

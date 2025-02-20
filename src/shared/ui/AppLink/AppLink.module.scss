@@ -1,0 +1,9 @@
+.AppLink {
+    color: var(--primary-color);
+    font-size: var(--font-size-l);
+    text-decoration: none;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
