@@ -1,4 +1,3 @@
-import { CookCard } from 'entities/CookCard'
 import { AboutPage } from 'pages/AboutPage'
 import { MainPage } from 'pages/MainPage'
 import { RecipeDetailsPage } from 'pages/RecipeDetailsPage'

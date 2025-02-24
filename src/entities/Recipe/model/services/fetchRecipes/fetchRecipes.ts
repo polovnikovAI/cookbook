@@ -1,23 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from 'app/providers/StoreProvider'
+import { Recipe } from '../../types/recipe'
 
-export enum cookByPicture {
-    knife = 'byKnife',
-    microwave = 'byMicrowave',
-    oven = 'byOven',
-    pan = 'byPan',
-    pot = 'byPot',
-    nothing = 'byNothing',
-    question = 'byQuestion',
-}
-
-export const fetchPicture = createAsyncThunk<string, string, ThunkConfig<string>>(
-    'cookcard/fetchPicture',
-    async (cookBy, thunkApi) => {
+export const fetchRecipes = createAsyncThunk<Recipe[], void, ThunkConfig<string>>(
+    'recipe/fetchRecipes',
+    async (_, thunkApi) => {
         const { extra, rejectWithValue } = thunkApi
 
         try {
-            const response = await extra.api.get(`/${cookBy}`)
+            const response = await extra.api.get<Recipe[]>(`/cards`)
 
             if (!response.data) {
                 throw new Error()

@@ -1,4 +1,4 @@
-export interface ICookCard {
+export interface Recipe {
     id: string
     cookBy: string
     nameFood: string
@@ -8,8 +8,8 @@ export interface ICookCard {
     ingredients: string[]
 }
 
-export interface CookCardSchema {
-    data?: ICookCard[]
+export interface RecipeSchema {
+    data?: Recipe
     isLoading: boolean
     error?: string
 }

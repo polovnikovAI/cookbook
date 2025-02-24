@@ -1,11 +1,11 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
 import { StateSchema, ThunkExtraArg } from './StateSchema'
 import { $api } from 'shared/api/api'
-import { cookCardReducer } from 'entities/CookCard'
+import { recipeReducer } from 'entities/Recipe'
 
 export function createReduxStore(initialState?: StateSchema) {
     const rootReducers: ReducersMapObject<StateSchema> = {
-        cookcard: cookCardReducer,
+        recipe: recipeReducer,
     }
 
     const extraArg: ThunkExtraArg = {

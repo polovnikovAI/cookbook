@@ -1,8 +1,8 @@
 import { AxiosInstance } from 'axios'
-import { CookCardSchema } from 'entities/CookCard'
+import { RecipeSchema } from 'entities/Recipe'
 
 export interface StateSchema {
-    cookcard: CookCardSchema
+    recipe: RecipeSchema
 }
 
 export interface ThunkExtraArg {

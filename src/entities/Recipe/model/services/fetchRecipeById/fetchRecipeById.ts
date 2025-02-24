@@ -1,14 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ICookCard } from '../../types/CookCard'
+import { Recipe } from '../../types/recipe'
 import { ThunkConfig } from 'app/providers/StoreProvider'
 
-export const fetchCookcard = createAsyncThunk<ICookCard[], void, ThunkConfig<string>>(
-    'cookcard/fetchCookcard',
-    async (_, thunkApi) => {
+export const fetchRecipeById = createAsyncThunk<Recipe, string, ThunkConfig<string>>(
+    'cookcard/fetchRecipeById',
+    async (recipeId, thunkApi) => {
         const { extra, rejectWithValue } = thunkApi
 
         try {
-            const response = await extra.api.get<ICookCard[]>(`/cards`)
+            const response = await extra.api.get<Recipe>(`/cards/${recipeId}`)
 
             if (!response.data) {
                 throw new Error()
