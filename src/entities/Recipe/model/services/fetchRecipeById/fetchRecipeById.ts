@@ -16,7 +16,7 @@ export const fetchRecipeById = createAsyncThunk<Recipe, string, ThunkConfig<stri
 
             return response.data
         } catch (e) {
-            return rejectWithValue('Карточек не нашлось')
+            return rejectWithValue('Рецепт не найден')
         }
     },
 )

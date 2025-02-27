@@ -17,13 +17,13 @@ import { Recipe } from '../../model/types/recipe'
 import { fetchRecipeById } from 'entities/Recipe/model/services/fetchRecipeById/fetchRecipeById'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 
-interface CookCardProps {
+interface RecipeCardProps {
     className?: string
     id: string
     target?: HTMLAttributeAnchorTarget
 }
 
-export const RecipeCard = memo((props: CookCardProps) => {
+export const RecipeCard = memo((props: RecipeCardProps) => {
     const { className, id } = props
     const dispatch = useAppDispatch()
     const data = useSelector(getRecipeData)

@@ -4,6 +4,7 @@ import { HStack } from 'shared/ui/Stack'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { useTheme } from 'app/providers/ThemeProvider'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface NavbarProps {
     className?: string
@@ -20,7 +21,7 @@ export const Navbar = (props: NavbarProps) => {
             className={classNames(cls.Navbar, {}, [className])}
         >
             <AppLink
-                to={'/'}
+                to={RoutePath.main}
                 className={cls.appName}
             >
                 CookBook
@@ -33,12 +34,12 @@ export const Navbar = (props: NavbarProps) => {
             </Button>
             <div className={cls.links}>
                 <AppLink
-                    to={'/recipe'}
+                    to={RoutePath.recipes}
                     className={cls.mainLink}
                 >
-                    КАРТОЧКИ
+                    РЕЦЕПТЫ
                 </AppLink>
-                <AppLink to={'/about'}>О САЙТЕ</AppLink>
+                <AppLink to={RoutePath.about}>О САЙТЕ</AppLink>
             </div>
         </HStack>
     )

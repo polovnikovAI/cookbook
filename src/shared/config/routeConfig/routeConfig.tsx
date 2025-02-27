@@ -1,21 +1,21 @@
 import { AboutPage } from 'pages/AboutPage'
 import { MainPage } from 'pages/MainPage'
 import { RecipeDetailsPage } from 'pages/RecipeDetailsPage'
-import { RecipePage } from 'pages/RecipePage'
+import { RecipesPage } from 'pages/RecipesPage'
 import { RouteProps } from 'react-router-dom'
 
 export enum AppRoutes {
     MAIN = 'main',
     ABOUT = 'about',
-    RECIPE = 'recipe',
+    RECIPES = 'recipes',
     RECIPE_DETAILS = 'recipe_details',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.RECIPE]: '/recipe',
-    [AppRoutes.RECIPE_DETAILS]: '/recipe/', // + :id
+    [AppRoutes.RECIPES]: '/recipes',
+    [AppRoutes.RECIPE_DETAILS]: '/recipes/', // + :id
 }
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
@@ -27,9 +27,9 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
         path: RoutePath.about,
         element: <AboutPage />,
     },
-    [AppRoutes.RECIPE]: {
-        path: RoutePath.recipe,
-        element: <RecipePage />,
+    [AppRoutes.RECIPES]: {
+        path: RoutePath.recipes,
+        element: <RecipesPage />,
     },
     [AppRoutes.RECIPE_DETAILS]: {
         path: `${RoutePath.recipe_details}:id`,

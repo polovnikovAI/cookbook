@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from 'app/providers/StoreProvider'
-import { Recipe } from '../../types/recipe'
+import { Recipe } from 'entities/Recipe'
 
 export const fetchRecipes = createAsyncThunk<Recipe[], void, ThunkConfig<string>>(
-    'recipe/fetchRecipes',
+    'recipesPage/fetchRecipes',
     async (_, thunkApi) => {
         const { extra, rejectWithValue } = thunkApi
 

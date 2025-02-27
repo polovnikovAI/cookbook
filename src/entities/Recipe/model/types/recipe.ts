@@ -10,6 +10,6 @@ export interface Recipe {
 
 export interface RecipeSchema {
     data?: Recipe
-    isLoading: boolean
+    isLoading?: boolean
     error?: string
 }
