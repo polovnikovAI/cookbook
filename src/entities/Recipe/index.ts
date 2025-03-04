@@ -2,3 +2,4 @@ export { fetchRecipeById } from './model/services/fetchRecipeById/fetchRecipeByI
 export { recipeActions, recipeReducer } from './model/slice/recipeSlice'
 export { RecipeCard } from './ui/RecipeCard/RecipeCard'
 export { Recipe, RecipeSchema } from './model/types/recipe'
+export { RecipeDetails } from './ui/RecipeDetails/RecipeDetails'

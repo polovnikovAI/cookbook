@@ -3,9 +3,11 @@ export interface Recipe {
     cookBy: string
     nameFood: string
     difficulty: number
+    healthy: number
     timeCook: number
     price: number
     ingredients: string[]
+    recipe: string[]
 }
 
 export interface RecipeSchema {

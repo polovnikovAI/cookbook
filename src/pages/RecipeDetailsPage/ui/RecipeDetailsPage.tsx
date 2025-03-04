@@ -1,4 +1,4 @@
-import { RecipeCard } from 'entities/Recipe'
+import { RecipeCard, RecipeDetails } from 'entities/Recipe'
 import { useCallback } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
@@ -29,8 +29,7 @@ const RecipeDetailsPage = () => {
                 <h1>Рецепт</h1>
                 <Button onClick={onBackToList}>Назад к рецептам</Button>
             </Flex>
-
-            <RecipeCard id={id} />
+            <RecipeDetails id={id} />
         </div>
     )
 }
