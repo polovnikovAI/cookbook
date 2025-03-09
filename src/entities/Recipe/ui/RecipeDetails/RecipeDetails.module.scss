@@ -1,3 +1,40 @@
-.ol {
-    border: 2px solid cyan;
+.RecipeDetails {
+    margin-left: 20%;
+}
+
+.nameFood {
+    padding-right: 30px;
+}
+
+.info {
+    padding: 5px;
+}
+
+.cookByImg {
+    width: 60px;
+    height: 60px;
+}
+
+.characteristics {
+    margin-bottom: 20px;
+}
+
+.difficulty {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    &::after {
+        content: "☆";
+        font-size: 32px;
+        padding-bottom: 4px;
+        color: yellow;
+    }
+}
+
+.listTitle {
+    margin-bottom: 15px;
+}
+
+.list {
+    margin-bottom: 10px;
 }

@@ -23,37 +23,74 @@ export const RecipeDetails = memo((props: RecipeDetailsProps) => {
     }, [dispatch, id])
 
     return (
-        <HStack className={classNames(cls.RecipeDetails, {}, [className])}>
+        <VStack className={classNames(cls.RecipeDetails, {}, [className])}>
+            <VStack className={cls.characteristics}>
+                <HStack>
+                    <Text
+                        size={TextSize.XL}
+                        title={recipe?.nameFood.toUpperCase()}
+                        className={cls.nameFood}
+                    />
+                    <img
+                        src={recipe?.cookBy}
+                        className={cls.cookByImg}
+                        alt='Готовить с ножом'
+                    />
+                </HStack>
+                <VStack>
+                    <Text
+                        className={cls.difficulty}
+                        size={TextSize.L}
+                        text={`Сложность : ${recipe?.difficulty}`}
+                    />
+                    <Text
+                        className={cls.info}
+                        size={TextSize.L}
+                        text={`Время приготовления : ${recipe?.timeCook} минут`}
+                    />
+                    <Text
+                        className={cls.info}
+                        size={TextSize.L}
+                        text={`Цена : ${recipe?.price} руб.`}
+                    />
+                </VStack>
+            </VStack>
+            <VStack className={cls.characteristics}>
+                <Text
+                    className={cls.listTitle}
+                    size={TextSize.L}
+                    title={'Ингредиенты'}
+                />
+                {recipe?.ingredients.map((ingredient, index) => (
+                    <div
+                        className={cls.list}
+                        key={index}
+                    >
+                        <Text
+                            size={TextSize.L}
+                            text={`${index + 1}. ${ingredient}`}
+                        />
+                    </div>
+                ))}
+            </VStack>
             <VStack>
                 <Text
-                    size={TextSize.XL}
-                    title={recipe?.nameFood.toUpperCase()}
-                />
-                <img
-                    src={recipe?.cookBy}
-                    alt='Готовить с ножом'
-                />
-                <Text
+                    className={cls.listTitle}
                     size={TextSize.L}
-                    text={`Сложность: ${recipe?.difficulty}`}
+                    title={'Приготовление'}
                 />
-                <Text
-                    size={TextSize.L}
-                    text={`Время приготовления: ${recipe?.timeCook}`}
-                />
-                <Text
-                    size={TextSize.L}
-                    text={`Цена: ${recipe?.price}`}
-                />
-            </VStack>
-            <Text title='Ингредиенты' />
-            <h3>
-                {recipe?.recipe.map((str) => (
-                    <li className={cls.ol}>
-                        <Text title={str} />
-                    </li>
+                {recipe?.recipe.map((step, index) => (
+                    <div
+                        className={cls.list}
+                        key={index}
+                    >
+                        <Text
+                            size={TextSize.L}
+                            text={`Шаг ${index + 1}. ${step}`}
+                        />
+                    </div>
                 ))}
-            </h3>
-        </HStack>
+            </VStack>
+        </VStack>
     )
 })

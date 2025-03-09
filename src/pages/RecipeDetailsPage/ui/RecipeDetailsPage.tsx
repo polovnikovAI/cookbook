@@ -26,7 +26,7 @@ const RecipeDetailsPage = () => {
                 justify='between'
                 className={cls.RecipeDetailsPage}
             >
-                <h1>Рецепт</h1>
+                <h1>{`Рецепт #${id}`}</h1>
                 <Button onClick={onBackToList}>Назад к рецептам</Button>
             </Flex>
             <RecipeDetails id={id} />
