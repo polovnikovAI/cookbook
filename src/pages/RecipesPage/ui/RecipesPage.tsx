@@ -10,7 +10,9 @@ import {
 } from '../model/selectors/recipesPageSelectors'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './RecipesPage.module.scss'
-import { VStack } from 'shared/ui/Stack'
+import { HStack, VStack } from 'shared/ui/Stack'
+import { Button } from 'shared/ui/Button/Button'
+import { CreateRecipe } from './CreateRecipe'
 
 const RecipesPage = () => {
     const dispatch = useAppDispatch()
@@ -27,7 +29,11 @@ const RecipesPage = () => {
             align='center'
             className={classNames(cls.RecipesPage, {}, [])}
         >
-            <h1>Рецепты</h1>
+            <CreateRecipe />
+            <HStack>
+                <h1>Рецепты</h1>
+                <Button className={cls.createRecipe}>Добавить рецепт</Button>
+            </HStack>
             <RecipeList
                 isLoading={isLoading}
                 recipes={recipes}
